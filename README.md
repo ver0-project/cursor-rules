@@ -66,7 +66,7 @@ Rules are organized in specific directories:
 #### Tools Rules
 
 - `commit-message.mdc` - Guidelines for semantic git commit messages
-- `git-no-pager.mdc` - Settings for proper git output display without pager
+- `git.mdc` - Settings for proper git output display without pager
 - `unix-directory-listing.mdc` - Standards for directory listings on Unix/Linux/macOS
 - `windows-directory-listing.mdc` - Standards for directory listings on Windows
 

@@ -120,7 +120,7 @@ download_rules() {
         
         # Tools rules
         "tools/commit-message.mdc"
-        "tools/git-no-pager.mdc"
+        "tools/git.mdc"
         "tools/unix-directory-listing.mdc"
         "tools/windows-directory-listing.mdc"
         
