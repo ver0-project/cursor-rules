@@ -1,0 +1,6 @@
+.DS_STORE
+.gitignore
+node_modules
+build
+dist
+.cursor/xnotes

@@ -1,0 +1,2 @@
+.cursor/rules/local/*
+!.cursor/rules/local/.gitkeep

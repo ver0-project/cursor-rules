@@ -1,0 +1,30 @@
+---
+description: "Provides an overview of the project purpose and structure"
+globs:
+alwaysApply: false
+---
+
+# Cursor Rules Project Overview
+
+## Context
+
+- This project is a collection of carefully crafted rules to optimize the Cursor AI experience
+- Rules enforce consistent practices and improve AI assistance quality
+- The project aims to streamline common development workflows
+- It provides an opinionated preset designed to enhance productivity
+
+## Key Features
+
+- Structured organization with logical rule categorization
+- Enhanced AI responses through consistent guidelines
+- Optimized development workflows for common tasks
+- Language-specific rule sets for specialized contexts
+- Customizable framework that can be extended with personal rules
+
+## Usage Principles
+
+- Rules should be concise without compromising clarity
+- Follow established formats with proper front matter
+- Create rules that balance token efficiency with readability
+- Organize rules in appropriate directories based on purpose
+- Prefer semantic clarity for both agents and humans

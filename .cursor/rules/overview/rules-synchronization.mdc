@@ -1,0 +1,58 @@
+---
+description: "Follow this rule each time new rule added or rule being deleted"
+globs:
+alwaysApply: false
+---
+
+# Rules Synchronization Overview
+
+## Context
+
+- The apply-rules.sh script is used to download rules to target directories
+- The script maintains a central list of all rules that should be downloaded
+- Synchronization between actual rules and this list is critical for consistency
+- Overview rules are treated as an exception to this synchronization requirement
+
+## Critical rules
+
+- Every time a new rule is created, it MUST be added to the RULES array in apply-rules.sh
+- Every time a rule is deleted, it MUST be removed from the RULES array in apply-rules.sh
+- Rules in the overview directory are EXEMPT from this requirement
+- Overview rules should NEVER be added to the apply-rules.sh script
+- Changes to rules and the script should be committed together
+- When modifying the RULES array, follow the existing categorization structure
+- Maintain alphabetical ordering within each category section
+
+## Examples
+
+<example type="valid">
+# After creating a new rule in core/new-rule.mdc:
+# Update apply-rules.sh:
+
+RULES=( # Core rules
+"core/coding-principles.mdc"
+"core/cursor-rules.mdc"
+"core/emoji-usage.mdc"
+"core/new-rule.mdc" # Newly added rule
+
+    # Other rule categories follow...
+
+)
+</example>
+
+<example type="invalid">
+# Creating a new rule in overview/project-description.mdc
+# but incorrectly adding it to apply-rules.sh:
+
+RULES=( # Core rules
+"core/coding-principles.mdc"
+"core/cursor-rules.mdc"
+"core/emoji-usage.mdc"
+
+    # Overview rules (INCORRECT - should not be included)
+    "overview/project-description.mdc"
+
+    # Other rule categories follow...
+
+)
+</example>
