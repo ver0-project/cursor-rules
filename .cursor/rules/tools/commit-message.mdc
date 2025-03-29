@@ -16,7 +16,6 @@ alwaysApply: false
 
 ## Critical rules
 
-- Before preforming commit - output full commit message as it would be displayed in git log.
 - Structure commit messages in format: `<type>(<scope>): <subject>`.
 - Type MUST be one of the following:
   - `feat`: New features (bumps minor version).
@@ -31,6 +30,7 @@ alwaysApply: false
   - `chore`: Regular maintenance tasks.
   - `revert`: Reverts a previous commit.
 - Scope is optional and indicates section of codebase (e.g., component name, module).
+  - Use `cursor` scope (e.g., `chore(cursor)`) when adding or modifying Cursor rules.
 - Subject should be imperative, present tense, not capitalized, no period at end.
 - All lines MUST be 72 characters or less.
 - Header line (type + scope + subject) should ideally be 50 characters or less, otherwise hard-limit is 72 characters.
@@ -39,8 +39,9 @@ alwaysApply: false
 - In case commit contains multiple changes subjects - add bulleted list of changes within body.
 - Footer (optional) for referencing issues: `Closes #123, #456`.
 - Breaking changes must include `BREAKING CHANGE:` in footer.
-- Header, body and footer must be always spaced with blank line.
+- Header, body and footer must be always separated by a blank line.
 - Multiple-line commit messages require proper git editor setup or -m flag with quoted text.
+- Always output the complete commit message for user review before executing any git commit command.
 - For UI display/references only, emojis can be used with types (not in actual commit message):
   - ✨ `feat` - new feature.
   - 🐛 `fix` - bug fix.
