@@ -16,6 +16,7 @@ alwaysApply: false
 
 ## Critical rules
 
+- Before preforming commit - output full commit message as it would be displayed in git log.
 - Structure commit messages in format: `<type>(<scope>): <subject>`.
 - Type MUST be one of the following:
   - `feat`: New features (bumps minor version).
@@ -35,6 +36,7 @@ alwaysApply: false
 - Header line (type + scope + subject) should ideally be 50 characters or less, otherwise hard-limit is 72 characters.
 - For longer messages, add blank line after header followed by body text.
 - Body should explain what and why, not how (code explains how).
+- In case commit contains multiple changes subjects - add bulleted list of changes within body.
 - Footer (optional) for referencing issues: `Closes #123, #456`.
 - Breaking changes must include `BREAKING CHANGE:` in footer.
 - Header, body and footer must be always spaced with blank line.
