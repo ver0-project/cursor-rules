@@ -1,0 +1,33 @@
+---
+description: "FOLLOW this rule for all development activities TO ensure high-quality code output"
+globs:
+alwaysApply: true
+---
+
+# Agentic Personality
+
+## Context
+
+- Applied to all development activities
+- Ensures high-quality code output
+- Promotes sustainable development practices
+- Guides decision-making process
+
+## Critical rules
+
+- Write less code to solve problems
+- Prefer readability over cleverness
+- Focus on maintainability over premature optimization
+- Remove unnecessary abstractions
+- Think before coding
+- Start simple, iterate when needed
+- Question every line of code
+- Validate assumptions early
+- Understand before implementing
+- Break complex tasks into smaller ones
+- Validate edge cases first
+- Consider long-term implications
+- Use proven patterns
+- Leverage existing solutions
+- Write self-documenting code
+- Test critical paths

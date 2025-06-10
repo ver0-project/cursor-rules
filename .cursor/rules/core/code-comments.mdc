@@ -1,0 +1,171 @@
+---
+description: "FOLLOW code commenting standards WHEN writing or modifying code TO ensure maintainability and clarity"
+globs:
+alwaysApply: true
+---
+
+# Code Commenting Standards
+
+## Context
+
+- Comments are essential for explaining complex logic and architectural decisions
+- Well-documented code improves maintainability, onboarding, and collaboration
+- Comments should explain "why" rather than "what" (the code already shows what it does)
+- Different languages have different commenting conventions but share common principles
+- Comments should remain relevant and be updated alongside code changes
+
+## Critical rules
+
+- Write comments that explain the "why" behind complex logic, not the obvious "what"
+- Document all public APIs, classes, functions, and methods with clear descriptions
+- Include parameter descriptions, return values, and exceptions/errors for functions
+- Keep comments concise, clear, and to the point
+- Update comments when modifying the related code
+- Use consistent comment style that follows language-specific conventions
+- Add TODO/FIXME comments with specific details for future work (include ticket numbers if available)
+- Use block comments for documentation and inline comments for implementation details
+- Avoid redundant or obvious comments that only repeat the code
+- Comment complex algorithms, business rules, and non-obvious edge cases
+- Document temporary workarounds and hacks with explanations and future resolution plans
+- Use standardized documentation tools when available (JSDoc, Javadoc, etc.)
+- Include examples in API documentation when helpful for understanding usage
+- Remove commented-out code instead of leaving it (version control preserves history)
+- Space and format comments for readability, similar to code formatting standards
+
+## Examples
+
+<example type="valid">
+// Good commenting examples
+
+/\*\*
+
+- Authenticates a user against the database and creates a session
+-
+- @param {string} username - The user's unique identifier
+- @param {string} password - The user's password (plain text)
+- @returns {Promise<Session>} A new session object or null if authentication fails
+- @throws {ValidationError} If credentials are malformed
+  \*/
+  async function authenticateUser(username, password) {
+  // Validate inputs before database query for security
+  if (!isValidUsername(username) || !password) {
+  throw new ValidationError('Invalid credentials format');
+  }
+
+// Using bcrypt for secure password comparison
+const user = await db.findUserByName(username);
+if (!user || !await bcrypt.compare(password, user.passwordHash)) {
+return null;
+}
+
+// TODO(TICKET-123): Implement 2FA check before session creation
+
+return createSession(user);
+}
+
+// This regex handles special Unicode characters that require additional processing
+// We need this complexity to support international user input
+const nameValidationPattern = /^[\p{L}\p{M}' .-]{2,50}$/u;
+</example>
+
+<example type="invalid">
+// Bad commenting examples
+
+// This function authenticates users
+function login(u, p) {
+// Get the user
+var user = getUser(u);
+
+// Check if user exists
+if (user) {
+// Check password
+if (checkPw(p, user.pw)) {
+// Create session
+var sess = makeSession(user);
+// Return session
+return sess;
+}
+}
+// Return null
+return null;
+}
+
+// Commented out old implementation
+// function getUser(username) {
+// return db.users.findOne({name: username});
+// }
+
+// This regular expression validates names
+const nameRegex = /^[\p{L}\p{M}' .-]{2,50}$/u;
+</example>
+
+### Good Comments
+
+<example>
+	// Calculate user's subscription tier based on:
+	// - Annual spending
+	// - Account age
+	// - Engagement metrics
+	function calculateUserTier(user) {
+		// Historical spending has 2x weight for loyalty
+		const spendingScore = user.annualSpend * 2;
+		
+		// Engagement decay factor: -10% per inactive month
+		const engagementFactor = 1 - (user.inactiveDays / 30) * 0.1;
+		
+		return computeTierScore(spendingScore, engagementFactor);
+	}
+</example>
+
+### Bad Comments
+
+<example type="invalid">
+	// Get user tier
+	function calculateUserTier(user) {
+		// Multiply by 2
+		const spendingScore = user.annualSpend * 2;
+		
+		// Calculate factor
+		const engagementFactor = 1 - (user.inactiveDays / 30) * 0.1;
+		
+		❌ Comments only state the obvious
+		❌ No explanation of business logic
+		❌ Missing context for calculations
+	}
+</example>
+
+### Documentation Comments
+
+<example>
+	/**
+	 * Processes user activity data to determine engagement level
+	 * 
+	 * @param {Object} activity - User activity metrics
+	 * @param {number} activity.logins - Number of logins in last 30 days
+	 * @param {number} activity.transactions - Number of transactions
+	 * @returns {number} Engagement score between 0 and 1
+	 * 
+	 * @throws {ValidationError} If activity data is incomplete
+	 */
+	function calculateEngagement(activity) {
+		// Implementation...
+	}
+</example>
+
+### Warning Comments
+
+<example>
+	// WARNING: This operation is not atomic!
+	// Ensure proper locking in multi-threaded contexts
+	function updateUserBalance(userId, amount) {
+		// Implementation...
+	}
+</example>
+
+<critical>
+	- ALWAYS explain complex business logic
+	- ALWAYS document public APIs
+	- ALWAYS update comments with code changes
+	- NEVER delete historical context
+	- NEVER leave obsolete comments
+</critical>

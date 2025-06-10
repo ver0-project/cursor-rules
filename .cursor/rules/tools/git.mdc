@@ -1,6 +1,6 @@
 ---
-description: "Follow this rule when using git"
-globs:
+description: "APPLY git command best practices WHEN executing git operations TO prevent pager issues and ensure reliable command output"
+globs: []
 alwaysApply: false
 ---
 
@@ -8,7 +8,7 @@ alwaysApply: false
 
 ## Context
 
-- Git commands may invoke a pager that can cause issues in automated environments or tool calls.
+- Git commands may invoke a pager that can cause issues or tool calls.
 - Terminal outputs from git commands can be difficult to capture when pager is active.
 - Proper git command formatting improves consistency and predictability.
 - The `--no-pager` flag prevents git from using the pager program for output.
@@ -16,7 +16,7 @@ alwaysApply: false
 
 ## Critical rules
 
-- Always use `git --no-pager` when executing git commands in automated environments.
+- Always use `git --no-pager` when executing git commands.
 - Use `git --no-pager log` instead of `git log` to avoid pager prompts.
 - Use `git --no-pager diff` instead of `git diff` to see full output without pagination.
 - Use `git --no-pager show` instead of `git show` to view commits without pager interference.

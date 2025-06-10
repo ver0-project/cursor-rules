@@ -1,5 +1,5 @@
 ---
-description: "Follow this rule when creating or suggesting git commit messages to ensure semantic commit format"
+description: "FOLLOW this rule WHEN creating or suggesting git commit messages TO ensure semantic commit format"
 globs:
 alwaysApply: false
 ---

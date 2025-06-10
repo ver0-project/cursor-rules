@@ -1,6 +1,6 @@
 ---
-description: "Follow this rule when listing directories on Windows systems using PowerShell"
-globs:
+description: "APPLY Windows PowerShell directory listing best practices WHEN exploring filesystems on Windows systems TO efficiently navigate and search directories with proper exclusions"
+globs: []
 alwaysApply: false
 ---
 

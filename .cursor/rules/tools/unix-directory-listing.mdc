@@ -1,6 +1,6 @@
 ---
-description: "Follow this rule when listing directories on Unix/Linux/macOS systems using common shell commands"
-globs:
+description: "APPLY Unix/Linux directory listing best practices WHEN exploring filesystems on Unix-like systems (Linux, macOS) TO efficiently navigate and search directories with proper exclusions"
+globs: []
 alwaysApply: false
 ---
 

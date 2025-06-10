@@ -1,5 +1,5 @@
 ---
-description: "Always follow this rule when user requests a rule to be added or modified, or asks to remember to always do something in the future"
+description: "FOLLOW cursor rules format and structure standards WHEN creating or modifying cursor rules TO ensure consistent rule organization and proper agent discoverability"
 globs:
 alwaysApply: true
 ---

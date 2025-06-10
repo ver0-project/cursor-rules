@@ -1,5 +1,5 @@
 ---
-description: "Follow this rule for all coding tasks to ensure high-quality, maintainable code following best practices"
+description: "FOLLOW coding principles WHEN writing or editing all code TO ensure high-quality, maintainable code following best practices"
 globs:
 alwaysApply: true
 ---
@@ -36,33 +36,41 @@ alwaysApply: true
 
 <example type="valid">
 // Good: Simple function with a single responsibility
+/**
+ * Calculates the total price of items including tax.
+ *
+ * @param {Array<{price: number, taxRate: number}>} items - List of items with price and tax rate.
+ * @returns {number} Total price including tax.
+ */
 function calculateTotalPrice(items) {
-  // Sum all item prices with tax
-  return items.reduce((total, item) => {
-    return total + (item.price * (1 + item.taxRate));
-  }, 0);
+  // Add up each item's price with its tax.
+  return items.reduce(
+    (total, item) => total + item.price * (1 + item.taxRate),
+    0
+  );
 }
 
-/\*\*
-
-- Authenticates a user with provided credentials
-- @param {string} username - The user's username
-- @param {string} password - The user's password
-- @returns {Promise<User>} - The authenticated user or throws an error
-  \*/
-  export async function authenticateUser(username, password) {
-  // Validate inputs
+/**
+ * Authenticates a user with provided credentials.
+ *
+ * @param {string} username - The user's username.
+ * @param {string} password - The user's password.
+ * @returns {Promise<User>} The authenticated user.
+ * @throws {Error} If credentials are missing or invalid.
+ */
+export async function authenticateUser(username, password) {
+  // Validate that both username and password are provided.
   if (!username || !password) {
-  throw new Error('Username and password required');
+    throw new Error('Username and password required');
   }
 
-// Check credentials against database
-const user = await database.findUser(username);
-if (!user || !await comparePassword(password, user.passwordHash)) {
-throw new Error('Invalid credentials');
-}
+  // Attempt to find the user and verify the password.
+  const user = await database.findUser(username);
+  if (!user || !(await comparePassword(password, user.passwordHash))) {
+    throw new Error('Invalid credentials');
+  }
 
-return user;
+  return user;
 }
 </example>
 
@@ -91,14 +99,16 @@ function process(data) {
 
 // No documentation for exported function
 export function auth(u, p) {
-if(!u || !p) return null;
-const usr = db.find(u);
-if(usr && checkPw(p, usr.pw)) {
-const t = generateToken();
-usr.t = t;
-db.update(usr);
-return {user: usr, token: t};
-}
-return null;
+  if (!u || !p) {
+    return null;
+  }
+  const usr = db.find(u);
+  if (usr && checkPw(p, usr.pw)) {
+    const t = generateToken();
+    usr.t = t;
+    db.update(usr);
+    return { user: usr, token: t };
+  }
+  return null;
 }
 </example>

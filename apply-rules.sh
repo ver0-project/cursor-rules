@@ -110,17 +110,24 @@ download_rules() {
     
     RULES=(
         # Core rules
+        "core/agent-personality.mdc"
+        "core/code-comments.mdc"
         "core/coding-principles.mdc"
         "core/cursor-rules.mdc"
         "core/emoji-usage.mdc"
         
-        # Lng rules
+        # Language rules
         "lng/markdown/formatting.mdc"
         "lng/markdown/readme-formatting.mdc"
+        
+        # Tasks rules
+        "tasks/decomposition-best-practices.mdc"
+        "tasks/feature-design-drafts.mdc"
         
         # Tools rules
         "tools/commit-message.mdc"
         "tools/git.mdc"
+        "tools/git-commit-message.mdc"
         "tools/unix-directory-listing.mdc"
         "tools/windows-directory-listing.mdc"
         

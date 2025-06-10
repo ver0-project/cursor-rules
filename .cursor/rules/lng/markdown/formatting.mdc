@@ -1,5 +1,5 @@
 ---
-description: "Follow this rule when writing or editing Markdown documents to ensure consistent formatting and structure"
+description: "APPLY Markdown formatting standards WHEN writing or editing Markdown documents TO ensure consistent formatting and structure"
 globs: "**/*.md"
 alwaysApply: false
 ---

@@ -1,0 +1,44 @@
+---
+description: "APPLY task decomposition best practices WHEN developers request help with breaking down tasks, planning work, or estimating scope TO ensure effective task management aligned with team workflow"
+globs: []
+alwaysApply: false
+---
+
+# Task Decomposition Best Practices
+
+## Core Principles
+
+- **Decompose Early:** Break down tasks as soon as it becomes clear a task will take more than one working day, or covers multiple functional areas.
+- **Independent Subtasks:** Each subtask should be as independent as possible, with a clear, concrete deliverable.
+- **One-Day Rule:** Subtasks should be completable within a single working day. If not, decompose further.
+- **Clarity:** Every subtask must have a clear description and outcome. Avoid vague or ambiguous subtask definitions.
+- **Minimalism:** Avoid over-decomposition (no subtasks for trivial 5-10 minute actions). Focus on meaningful, manageable units of work.
+- **Parallelization:** If requested, decompose so that different people can work on subtasks in parallel.
+- **Explicit Dependencies:** Identify and document dependencies between subtasks.
+- **Iterate:** Be ready to adjust decomposition as understanding improves or requirements change.
+
+## Decomposition Methods
+
+- By functionality (logical components or features)
+- By workflow stage (design, implementation, testing, documentation)
+- By technology layer (frontend, backend, database, API, etc.)
+- Any combination of the above, as appropriate
+
+## Common Pitfalls
+
+- Subtasks too large or too vague
+- Overly fine-grained subtasks that waste time
+- Ignoring dependencies or unclear sequencing
+- Failing to update decomposition as the task evolves
+
+## Checklist for Decomposition
+
+- [ ] Is each subtask independent and clearly defined?
+- [ ] Can each subtask be completed in one working day?
+- [ ] Are all dependencies and orderings explicit?
+- [ ] Are estimates provided for each subtask?
+- [ ] Is the decomposition minimal but sufficient?
+
+## Additional Notes
+
+- Always document the rationale for decomposition choices, especially for complex or non-obvious splits.

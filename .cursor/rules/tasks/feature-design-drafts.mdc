@@ -1,0 +1,114 @@
+---
+description: "APPLY design draft standards WHEN developers need to create technical design documents or feature specifications TO ensure comprehensive planning and clear communication"
+globs: []
+alwaysApply: false
+---
+
+# Feature Design Drafts
+
+## Context
+
+- Applied when creating technical design documents for new features, architecture changes, or system modifications
+- Based on team's existing draft format (see `/drafts` directories) and industry best practices
+- Ensures thorough planning before implementation and facilitates team review
+- Serves as documentation during and after implementation
+
+## Core Structure
+
+### Required Sections
+
+**Problem Statement** - Clear description of what you're trying to solve and why
+
+- User problems being addressed
+- Business motivation and context
+- Background information and previous attempts
+
+**Solution Overview** - High-level approach to solving the problem
+
+- Temporary vs. permanent strategies
+- Key architectural decisions
+- Integration with existing systems
+
+**Technical Implementation** - Detailed technical approach
+
+- Data model changes and ID generation
+- API changes and endpoints
+- Configuration examples with code snippets
+- Migration strategies
+
+**Technical Analysis** - Analysis of current state and proposed changes
+
+- Current implementation format/structure
+- Alternative implementation options with pros/cons
+- Impact on existing systems
+
+**Problems/Considerations** - Known issues and limitations
+
+- Performance implications
+- Security and privacy concerns
+- Dependencies on other teams/systems
+- Future maintenance considerations
+
+### Optional Sections (as needed)
+
+- **Milestones** - Key deliverables
+- **Testing Strategy** - Validation approach
+- **Rollout Plan** - Deployment and feature flag strategy
+- **Metrics/Success Criteria** - How to measure success
+- **Open Questions** - Areas needing further investigation
+
+## Best Practices
+
+### Structure and Format
+
+- Start with problem statement - never jump directly to solutions
+- Use clear headings and bullet points for readability
+- DO NOT include code snippets and configuration examples as it is implementation details
+- Add diagrams for complex architecture (when beneficial)
+- Keep language concise but comprehensive
+
+### Content Guidelines
+
+- **Be Specific** - Include concrete examples, prefixes, formats, timeframes
+- **Consider Alternatives** - List multiple implementation options with trade-offs if sufficient
+- **Think Backwards Compatibility** - Address migration and legacy support
+- **Document Assumptions** - State temporary vs. permanent decisions
+- **Link Related Work** - Reference benchmarks, related files, or documentation
+
+## Template Outline
+
+- Use the language of input.
+- Be concise and to the point.
+
+```markdown
+# [Feature Name]
+
+## Problem
+
+[Clear problem statement and motivation]
+
+##  Solution
+
+### [Strategy sections as needed]
+
+## Technical Analysis
+
+### [Current state analysis]
+
+### [Implementation variants with pros/cons]
+
+## Problems & Considerations
+
+[Known limitations and concerns]
+```
+
+## Quality Checklist
+
+- [ ] Problem clearly stated with business context
+- [ ] Solution approach is understandable to stakeholders
+- [ ] Technical implementation includes concrete examples
+- [ ] Alternative approaches considered and documented
+- [ ] Integration with existing systems addressed
+- [ ] Performance and scalability implications discussed
+- [ ] Dependencies and risks identified
+- [ ] Migration/backwards compatibility planned
